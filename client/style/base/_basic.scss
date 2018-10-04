@@ -1,0 +1,27 @@
+body {
+  background-color: $color-body;
+  color: $color-text;
+  line-height: 1.5;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $color-heading;
+  font-size: 21px;
+  margin-bottom: 0px;
+  line-height: 1.1;
+}
+p{
+  margin-bottom:20px;
+}
+a{
+  color:$color-link;
+  text-decoration:none;
+}
+a:hover{
+  color:$color-link-hover;
+}

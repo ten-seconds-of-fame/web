@@ -1,0 +1,73 @@
+/** Color Guide **/
+$color-body: #fff;
+$color-primary: #000;
+$color-secondary: rgb(104, 104, 104);
+$color-heading: #333333;
+$color-text:#000;
+$color-link:#000;
+$color-link-hover:#a60505;
+$color-button:#f9f9f9;
+$color-button-hover:#f9f9f9;
+$color-button-text:#f9f9f9;
+$color-button-text-hover:#a60505;
+
+/** Media Query Mixins **/
+@mixin xs {
+  @media (min-width: 300px) {
+    @content;
+  }
+}
+
+@mixin xs_max {
+  @media (max-width: 300px) {
+    @content;
+  }
+}
+
+@mixin sm {
+  @media (min-width: 550px) {
+    @content;
+  }
+}
+
+@mixin sm_max {
+  @media (max-width: 550px) {
+    @content;
+  }
+}
+
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin md_max {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin lg {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+
+@mixin lg_max {
+  @media (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin xl {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+
+@mixin xl_max {
+  @media (max-width: 1200px) {
+    @content;
+  }
+}

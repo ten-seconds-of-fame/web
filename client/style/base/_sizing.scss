@@ -1,0 +1,48 @@
+/*  Mobile
+======================================================= */
+@include sm{
+  .alpha    { font-size: 35px; }
+  .beta     { font-size: 30px; }
+  .gamma    { font-size: 26px; }
+  .delta    { font-size: 18px; }
+  .epsilon  { font-size: 18px; }
+  .zeta     { font-size: 16px; }
+  .eta      { font-size: 14px; }
+  a,
+  p,
+  li,
+  span,
+  label		  { font-size: 16px; }
+}
+@include md{
+  .alpha    { font-size: 50px; }
+	.beta     { font-size: 35px; }
+	.gamma    { font-size: 28px; }
+	.delta    { font-size: 21px; }
+	.epsilon  { font-size: 20px; }
+	.zeta     { font-size: 18px; }
+  .eta      { font-size: 14px; }
+  a,
+  p,
+  li,
+  span,
+  label		  { font-size: 18px; }  
+}
+@include lg{
+  .alpha 		{ font-size: 55px; }
+	.beta 		{ font-size: 40px; }
+	.gamma 		{ font-size: 30px; }
+	.delta 		{ font-size: 25px; }
+	.epsilon 	{ font-size: 21px; }
+	.zeta 		{ font-size: 18px; }
+	.eta 		  { font-size: 16px; }
+}
+@include xl{
+  .alpha 		{ font-size: 65px; }
+	.beta 		{ font-size: 50px; }
+	.gamma 		{ font-size: 40px; }
+	.delta 		{ font-size: 25px; }
+	.epsilon 	{ font-size: 21px; }
+	.zeta 		{ font-size: 18px; }
+	.eta 			{ font-size: 15px; }
+}
