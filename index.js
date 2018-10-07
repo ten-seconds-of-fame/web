@@ -1,15 +1,16 @@
 'use strict'
 import express from 'express';
 import webpack from 'webpack';
-import webpackMiddleware from 'webpack-dev-middleware';
+import webpackDevMiddleware from 'webpack-dev-middleware';
 import webpackConfig from './webpack.client.js';
 
 const app = express();
 const PORT = process.env.PORT || 2333;
 const NODE_ENV = process.env.NODE_ENV || 'development';
+const compiler = webpack(webpackConfig);
 
 if(NODE_ENV === 'development'){
-  app.use(webpackMiddleware(webpack(webpackConfig)));
+  app.use(webpackDevMiddleware(compiler));
 }else{
   app.use(express.static('build'));
 }
