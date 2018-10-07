@@ -3,22 +3,34 @@ import ReactDOM from 'react-dom';
 import socketIOClient from "socket.io-client";
 import './style/style.css';
 import './style/core.scss';
+const socket = socketIOClient('http://127.0.0.1:4229');
 
 class App extends React.Component {
   constructor(){
     super();
     this.state = {
-      response: 0,
-      endpoint: "http://127.0.0.1:4229"
+      response: null,
+      endpoint: "http://127.0.0.1:4229",
+      countdown:0,
+      safetyNet:0,
+      isSafetyOn: true
     };
   }
 
+  addTime(){
+    console.log("add time");
+    socket.emit('add-time',null);
+  }
+  subtractTime(){
+    console.log("subtract time");
+    socket.emit('subtract-time', null);
+  }
   componentDidMount(){
     const { endpoint } = this.state;
-    const socket = socketIOClient(endpoint);
     socket.on("time", data => {
       console.log(data);
-      this.setState({ response: data })
+      let {countdown, safetyNet, isSafetyOn } = data;
+      this.setState({ response: data, countdown, safetyNet, isSafetyOn })
     });
   }
 
@@ -26,8 +38,10 @@ class App extends React.Component {
     const { response } = this.state;
     return (
       <div>
-        <h1>Ten Seconds of Fame Web</h1>
-        <h2>{this.state.response}</h2>
+        <h1>Ten Seconds of Fame Weby</h1>
+        <h2>{JSON.stringify(response)}</h2>
+        <button onClick={()=>this.addTime()}>Add Time</button>
+        {!this.state.isSafetyOn && <button onClick={()=>this.subtractTime()}>Subtract Time</button>}
       </div>
     )
   }
